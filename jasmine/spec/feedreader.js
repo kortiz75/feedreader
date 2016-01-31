@@ -114,8 +114,24 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+        var firstFeed;
+        var secondFeed;
+
+        //ensures loadFeed is done and stores the contents of the first two feeds
         beforeEach(function(done) {
-            loadFeed(0, done);
-         });
+            loadFeed(0, function() {
+                firstFeed = $('.feed').html();
+                loadFeed(1, function() {
+                    secondFeed = $('.feed').html();
+                    done ();
+                });
+            });
+        });
+        //ensures the first feed is different from the second feed
+        it('changes feed content', function(done) {
+            expect(firstFeed).not.toBe(secondFeed);
+            done();
+        });
     });
 }());
