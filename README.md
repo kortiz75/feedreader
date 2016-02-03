@@ -1,5 +1,9 @@
 # Feed Reader Testing
 
+## Purpose of Project
+
+To learn about testing with JavaScript and test-driven development. To learn how to use the Jasmine test suite to run tests against code and how to handle varying situations including asynchronous code.
+
 ### To open feed reader through GitHub
 
 1. Navigate to http://kortiz75.github.io/frontend-nanodegree-feedreader to open up the feed reader site 
